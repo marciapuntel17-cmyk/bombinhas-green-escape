@@ -25,7 +25,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             <button 
-              onClick={() => scrollToSection("home")} 
+              onClick={() => scrollToSection("hero")} 
               className="text-foreground hover:text-primary transition-smooth"
             >
               Início
@@ -43,10 +43,16 @@ const Header = () => {
               Acomodações
             </button>
             <button 
-              onClick={() => scrollToSection("experiencias")} 
+              onClick={() => scrollToSection("galeria")} 
               className="text-foreground hover:text-primary transition-smooth"
             >
-              Experiências
+              Galeria
+            </button>
+            <button 
+              onClick={() => scrollToSection("o-que-fazer")} 
+              className="text-foreground hover:text-primary transition-smooth"
+            >
+              O que Fazer
             </button>
             <button 
               onClick={() => scrollToSection("localizacao")} 
@@ -79,7 +85,7 @@ const Header = () => {
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-3">
               <button 
-                onClick={() => scrollToSection("home")} 
+                onClick={() => scrollToSection("hero")} 
                 className="text-left text-foreground hover:text-primary transition-smooth py-2"
               >
                 Início
@@ -97,10 +103,16 @@ const Header = () => {
                 Acomodações
               </button>
               <button 
-                onClick={() => scrollToSection("experiencias")} 
+                onClick={() => scrollToSection("galeria")} 
                 className="text-left text-foreground hover:text-primary transition-smooth py-2"
               >
-                Experiências
+                Galeria
+              </button>
+              <button 
+                onClick={() => scrollToSection("o-que-fazer")} 
+                className="text-left text-foreground hover:text-primary transition-smooth py-2"
+              >
+                O que Fazer
               </button>
               <button 
                 onClick={() => scrollToSection("localizacao")} 

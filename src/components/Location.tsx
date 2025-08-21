@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { MapPin, Clock, Car, Plane } from "lucide-react";
 
 const Location = () => {
@@ -111,21 +112,56 @@ const Location = () => {
 
           {/* Mapa */}
           <div className="h-[500px] lg:h-full min-h-[400px]">
-            <Card className="h-full shadow-ocean">
-              <CardContent className="p-0 h-full">
-                <div className="w-full h-full bg-gradient-ocean rounded-lg flex items-center justify-center text-white">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold mb-2">Mapa Interativo</h3>
-                    <p className="text-white/90 max-w-xs">
-                      Explore nossa localização e descubra as atrações próximas
-                    </p>
-                    <div className="mt-4 text-sm text-white/80">
-                      <p>🗺️ Google Maps será integrado aqui</p>
-                      <p className="mt-2">Coordenadas aproximadas:</p>
-                      <p>-27.1394° S, -48.4814° W</p>
-                    </div>
+            <Card className="h-full shadow-ocean overflow-hidden">
+              <CardContent className="p-0 h-full relative">
+                {/* Mapa do Google Maps integrado */}
+                <div className="w-full h-full rounded-lg overflow-hidden">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.842!2d-48.485!3d-27.14!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDgwJzI2LjAiUyA0OMKwMjknMDYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr&markers=color:red%7Clabel:P%7C-27.14,-48.485"
+                    width="100%" 
+                    height="100%" 
+                    style={{border: 0, minHeight: '400px'}}
+                    allowFullScreen={true}
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localização da Pousada Praia de Bombinhas"
+                    className="rounded-lg"
+                  />
+                </div>
+                
+                {/* Overlay com informações */}
+                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 max-w-xs shadow-lg">
+                  <div className="flex items-center mb-2">
+                    <MapPin className="w-5 h-5 text-primary mr-2" />
+                    <span className="font-semibold text-primary">Nossa Localização</span>
                   </div>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Centro de Bombinhas, cercada pela Mata Atlântica
+                  </p>
+                  <div className="space-y-1 text-xs text-muted-foreground">
+                    <div>🏖️ 700m das principais praias</div>
+                    <div>🏪 100m do centro comercial</div>
+                    <div>🚗 Fácil acesso de carro</div>
+                  </div>
+                </div>
+
+                {/* Botões de ação */}
+                <div className="absolute bottom-4 right-4 space-y-2">
+                  <Button 
+                    size="sm" 
+                    className="bg-white/90 text-primary hover:bg-white shadow-lg"
+                    onClick={() => window.open('https://maps.google.com/?q=Pousada+Praia+de+Bombinhas,+Bombinhas,+SC', '_blank')}
+                  >
+                    Abrir no Google Maps
+                  </Button>
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    className="bg-white/90 hover:bg-white shadow-lg"
+                    onClick={() => window.open('https://waze.com/ul?q=Pousada+Praia+de+Bombinhas,+Bombinhas,+SC', '_blank')}
+                  >
+                    Abrir no Waze
+                  </Button>
                 </div>
               </CardContent>
             </Card>
