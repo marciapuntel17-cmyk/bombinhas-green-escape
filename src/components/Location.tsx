@@ -1,33 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Clock, Car, Plane } from "lucide-react";
-
 const Location = () => {
-  const locationFeatures = [
-    {
-      icon: <MapPin className="w-6 h-6 text-primary" />,
-      title: "Centro de Bombinhas",
-      description: "Localizada estrategicamente no coração da cidade"
-    },
-    {
-      icon: <Clock className="w-6 h-6 text-secondary" />,
-      title: "700m das Praias",
-      description: "Caminhada de 8 minutos até as praias principais"
-    },
-    {
-      icon: <Car className="w-6 h-6 text-primary" />,
-      title: "Fácil Acesso",
-      description: "Próximo a restaurantes, comércio e atrações"
-    },
-    {
-      icon: <Plane className="w-6 h-6 text-secondary" />,
-      title: "Como Chegar",
-      description: "1h30 do Aeroporto de Florianópolis"
-    }
-  ];
-
-  return (
-    <section id="localizacao" className="py-20">
+  const locationFeatures = [{
+    icon: <MapPin className="w-6 h-6 text-primary" />,
+    title: "Centro de Bombinhas",
+    description: "Localizada estrategicamente no coração da cidade"
+  }, {
+    icon: <Clock className="w-6 h-6 text-secondary" />,
+    title: "700m das Praias",
+    description: "Caminhada de 8 minutos até as praias principais"
+  }, {
+    icon: <Car className="w-6 h-6 text-primary" />,
+    title: "Fácil Acesso",
+    description: "Próximo a restaurantes, comércio e atrações"
+  }, {
+    icon: <Plane className="w-6 h-6 text-secondary" />,
+    title: "Como Chegar",
+    description: "1h30 do Aeroporto de Florianópolis"
+  }];
+  return <section id="localizacao" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -43,8 +35,7 @@ const Location = () => {
           {/* Informações de Localização */}
           <div className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {locationFeatures.map((feature, index) => (
-                <Card key={index} className="bg-card border-border shadow-soft hover:shadow-nature transition-smooth">
+              {locationFeatures.map((feature, index) => <Card key={index} className="bg-card border-border shadow-soft hover:shadow-nature transition-smooth">
                   <CardContent className="p-6 text-center">
                     <div className="flex justify-center mb-4">
                       {feature.icon}
@@ -56,8 +47,7 @@ const Location = () => {
                       {feature.description}
                     </p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
 
             <Card className="bg-gradient-nature text-white shadow-nature">
@@ -116,17 +106,10 @@ const Location = () => {
               <CardContent className="p-0 h-full relative">
                 {/* Mapa do Google Maps integrado */}
                 <div className="w-full h-full rounded-lg overflow-hidden">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.842!2d-48.485!3d-27.14!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDgwJzI2LjAiUyA0OMKwMjknMDYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr&markers=color:red%7Clabel:P%7C-27.14,-48.485"
-                    width="100%" 
-                    height="100%" 
-                    style={{border: 0, minHeight: '400px'}}
-                    allowFullScreen={true}
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Localização da Pousada Praia de Bombinhas"
-                    className="rounded-lg"
-                  />
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.842!2d-48.485!3d-27.14!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDgwJzI2LjAiUyA0OMKwMjknMDYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr&markers=color:red%7Clabel:P%7C-27.14,-48.485" width="100%" height="100%" style={{
+                  border: 0,
+                  minHeight: '400px'
+                }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Localização da Pousada Praia de Bombinhas" className="rounded-lg" />
                 </div>
                 
                 {/* Overlay com informações */}
@@ -147,19 +130,10 @@ const Location = () => {
 
                 {/* Botões de ação */}
                 <div className="absolute bottom-4 right-4 space-y-2">
-                  <Button 
-                    size="sm" 
-                    className="bg-white/90 text-primary hover:bg-white shadow-lg"
-                    onClick={() => window.open('https://maps.google.com/?q=Pousada+Praia+de+Bombinhas,+Bombinhas,+SC', '_blank')}
-                  >
+                  <Button size="sm" className="bg-white/90 text-primary hover:bg-white shadow-lg" onClick={() => window.open('https://maps.google.com/?q=Pousada+Praia+de+Bombinhas,+Bombinhas,+SC', '_blank')}>
                     Abrir no Google Maps
                   </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="bg-white/90 hover:bg-white shadow-lg"
-                    onClick={() => window.open('https://waze.com/ul?q=Pousada+Praia+de+Bombinhas,+Bombinhas,+SC', '_blank')}
-                  >
+                  <Button size="sm" variant="outline" className="bg-white/90 hover:bg-white shadow-lg" onClick={() => window.open('https://waze.com/ul?q=Pousada+Praia+de+Bombinhas,+Bombinhas,+SC', '_blank')}>
                     Abrir no Waze
                   </Button>
                 </div>
@@ -168,8 +142,6 @@ const Location = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Location;
