@@ -1,8 +1,6 @@
 import { Heart, Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-foreground text-white py-12">
+  return <footer className="bg-foreground text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Informações da Pousada */}
@@ -16,18 +14,10 @@ const Footer = () => {
               com todo o conforto e tranquilidade que você merece.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="text-white/60 hover:text-white transition-smooth"
-                aria-label="Instagram"
-              >
+              <a href="#" className="text-white/60 hover:text-white transition-smooth" aria-label="Instagram">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a 
-                href="#" 
-                className="text-white/60 hover:text-white transition-smooth"
-                aria-label="Facebook"
-              >
+              <a href="#" className="text-white/60 hover:text-white transition-smooth" aria-label="Facebook">
                 <Facebook className="w-6 h-6" />
               </a>
             </div>
@@ -39,26 +29,20 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <a 
-                  href="tel:+5548999999999" 
-                  className="text-white/80 hover:text-white transition-smooth"
-                >
+                <a href="tel:+5548999999999" className="text-white/80 hover:text-white transition-smooth">
                   (48) 99999-9999
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-secondary" />
-                <a 
-                  href="mailto:contato@pousadabombinhas.com.br" 
-                  className="text-white/80 hover:text-white transition-smooth"
-                >
+                <a href="mailto:contato@pousadabombinhas.com.br" className="text-white/80 hover:text-white transition-smooth">
                   contato@pousadabombinhas.com.br
                 </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
                 <div className="text-white/80">
-                  <p>Rua das Garoupas, 123</p>
+                  <p>Rua Parati, 720</p>
                   <p>Centro - Bombinhas, SC</p>
                   <p>CEP: 88215-000</p>
                 </div>
@@ -92,8 +76,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
